@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerbang Langit Travel Indonesia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+  <div class="menu-toggle" id="menuToggle">☰</div>
+  <div class="logo">
+    <h3>GERBANG LANGIT</h3></div>
+
+  <ul id="navbarMenu">
+    <div class="close-sidebar" id="closeSidebar">❮</div>
+    <li><a href="#about">Tentang</a></li>
+    <li><a href="#fasilitas">Fasilitas</a></li>
+    <li><a href="#paket">Paket</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+    <li><a href="#maps">Lokasi</a></li>
+    <li><a href="#contact">Kontak</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="content">
+    <h1>Nikmati Keindahan Dari Gerbang Langit</h1>
+    <p>Temukan dan pilih paket liburan terbaik anda</p>
+    <a class="btn-main" onclick="orderDefault()">Pesan Sekarang</a>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about-section">
+  <h2 class=>Tentang Kami</h2>
+  <div class="about-container">
+    <div class="about-image">
+
+      <img src="poto/2.jpg" alt="Gerbang Langit" />
+    </div>
+
+    <div class="about-content">
+      <h2>Gerbang Langit</h2>
+      <p>
+        Gerbang Langit Travel menghadirkan pengalaman wisata alam yang tenang,
+        sejuk, dan penuh kenangan. Kami menggabungkan keindahan pegunungan dengan
+        fasilitas camping yang nyaman dan pelayanan profesional.
+      </p>
+
+      <p>
+        Mulai dari sunrise terbaik, area camp luas, api unggun malam,
+        hingga akses wisata strategis — semua kami siapkan agar liburan
+        Anda lebih berkesan.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= FASILITAS ================= -->
+<section id="fasilitas">
+  <h2>Fasilitas Kami</h2>
+  <ul id="fasilitasList" class="fasilitas-box"></ul>
+</section>
+
+<!-- ================= PAKET ================= -->
+<section id="paket">
+  <h2>Paket Wisata</h2>
+  <div id="paketList" class="paket-list"></div>
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section id="testimoni">
+  <h2>Testimoni</h2>
+
+  <div class="testi-slider">
+    <div class="testi-track" id="testiTrack"></div>
+  </div>
+
+  <!-- tombol galeri -->
+  <div style="text-align:center;margin-top:20px">
+    <button class="btn-main" onclick="openGallery()">
+      📸 Lihat Galeri Foto
+    </button>
+  </div>
+</section>
+<!-- ================= GALERI TESTIMONI ================= -->
+<div id="galleryPopup" class="popup-wrapper" style="display:none">
+  <div class="popup-card" style="max-width:900px">
+    <h3>Galeri Foto Pengunjung</h3>
+
+    <div id="galleryGrid" class="gallery-grid"></div>
+
+    <button class="btn-close" onclick="closeGallery()">Tutup</button>
+  </div>
+</div>
+
+<!-- ================= MAP ================= -->
+<section id="maps">
+  <h2>Lokasi Kami</h2>
+  <div class="map-box">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d493.22405826895005!2d116.465276889503!3d-8.51952005707302"
+      width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer-premium">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <h3>Hubungi Kami</h3>
+      <p>
+        Camping ground alami di Desa Pengadangan,  
+        tempat terbaik menikmati langit, alam, dan ketenangan.
+      </p>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg">
+      </a>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg">
+      </a>
+      <a href="https://tiktok.com/" target="_blank" aria-label="TikTok">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg">
+      </a>
+    </div>
+
+    <!-- Admin tersembunyi -->
+    <div class="footer-admin">
+      <a href="login.html">Admin</a>
+    </div>
+
+  </div>
+
+  <div class="footer-copy ">
+    © 2025 Gerbang Langit Pengadangan
+  </div>
+</footer>
+
+
+<!-- ================= POPUP BOOKING ================= -->
+<div id="popup-booking" class="popup-wrapper">
+  <div class="popup-card">
+    <h3>Form Booking Paket Wisata</h3>
+
+    <div class="form-group">
+      <label>Nama Lengkap</label>
+      <input id="nama" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Tanggal</label>
+      <input id="tanggal" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label>Waktu</label>
+      <input id="waktu" type="time" />
+    </div>
+
+    <div class="form-group">
+      <label>Jumlah Peserta</label>
+      <input id="jumlah" type="number" min="1" />
+    </div>
+
+    <button class="btn-submit-booking btn-kirim-order">
+      Kirim Pesanan
+    </button>
+
+    <button class="btn-close" onclick="closePopup()">Tutup</button>
+  </div>
+</div>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+/* ===== GLOBAL ===== */
+let selectedPaket = "Booking Manual";
+let selectedHarga = 0;
+
+const popup = document.getElementById("popup-booking");
+
+/* ===== POPUP ===== */
+function openPopup() {
+  popup.style.display = "flex";
+}
+function closePopup() {
+  popup.style.display = "none";
+}
+
+/* ===== STORAGE ===== */
+function getData(key) {
+  return JSON.parse(localStorage.getItem(key) || "[]");
+}
+function saveData(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+/* ===== RENDER ===== */
+function renderPaket() {
+  const data = getData("paket");
+  const box = document.getElementById("paketList");
+
+  box.innerHTML = data.length
+    ? data.map(p => `
+      <div class="paket-card">
+        <img src="${p.gambar}">
+        <h3>${p.nama}</h3>
+        <p>${p.deskripsi}</p>
+        <div class="price">Rp ${p.harga.toLocaleString("id-ID")}</div>
+        <button onclick="order('${p.nama}', ${p.harga})">Booking</button>
+      </div>
+    `).join("")
+    : "<p>Belum ada paket.</p>";
+}
+
+function renderFasilitas() {
+  const data = getData("fasilitas");
+  const box = document.getElementById("fasilitasList");
+
+  box.innerHTML = data.length
+    ? data.map(f => `
+      <li class="fasilitas-item">
+        <img src="${f.icon}">
+        <h4>${f.nama}</h4>
+        <p>${f.ket}</p>
+      </li>
+    `).join("")
+    : "<p>Belum ada fasilitas.</p>";
+}
+
+function loadTestimoniPublik() {
+  const data = getData("testimoni");
+  const track = document.getElementById("testiTrack");
+
+  track.innerHTML = data.length
+    ? data.map(t => `<div class="testi-card"><img src="${t.foto}"></div>`).join("")
+    : "<p>Belum ada testimoni.</p>";
+}
+
+renderPaket();
+renderFasilitas();
+loadTestimoniPublik();
+
+/* ===== ORDER ===== */
+function order(paket, harga) {
+  selectedPaket = paket;
+  selectedHarga = harga;
+  openPopup();
+}
+
+function orderDefault() {
+  selectedPaket = "Booking Manual";
+  selectedHarga = 0;
+  openPopup();
+}
+
+/* ===== SUBMIT BOOKING ===== */
+document.querySelector(".btn-kirim-order").addEventListener("click", () => {
+  const n = nama.value.trim();
+  const t = tanggal.value;
+  const w = waktu.value;
+  const j = Number(jumlah.value || 1);
+
+  if (!n || !t || !w || !j) {
+    alert("Lengkapi data!");
+    return;
+  }
+
+  const bookings = getData("bookings");
+
+  bookings.push({
+    id: Date.now(),
+    nama: n,
+    paket: selectedPaket,
+    jumlah: j,
+    total: selectedHarga * j,
+    waktu: `${t} ${w}`,
+    read: false
+  });
+
+  saveData("bookings", bookings);
+  localStorage.setItem("bookings_last_update", Date.now());
+
+  window.open(
+    "https://wa.me/6287799130382?text=" +
+    encodeURIComponent(`Halo Admin, saya ingin booking ${selectedPaket}`)
+  ); 
+  alert("Pesanan berhasil dikirim!");
+  closePopup();
+
+  document.querySelectorAll("#popup-booking input").forEach(i => i.value = "");
+});
+
+/* ===== NAV MOBILE ===== */
+menuToggle.onclick = () => navbarMenu.classList.toggle("show");
+closeSidebar.onclick = () => navbarMenu.classList.remove("show");
+
+</script>
+<script>
+  document.addEventListener("click", (e) => {
+    if (
+      navbarMenu.classList.contains("show") &&
+      !navbarMenu.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      navbarMenu.classList.remove("show");
+    }
+  });
+</script>
+<script>
+  
+const slider = document.querySelector('.testi-slider');
+const track = document.querySelector('.testi-track');
+
+let isInteracting = false;
+
+// Pause animasi saat user scroll / swipe
+['touchstart','mousedown','wheel'].forEach(evt => {
+  slider.addEventListener(evt, () => {
+    track.style.animationPlayState = 'paused';
+  });
+});
+
+// Lanjutkan animasi setelah selesai
+['touchend','mouseup','mouseleave'].forEach(evt => {
+  slider.addEventListener(evt, () => {
+    track.style.animationPlayState = 'running';
+  });
+});
+
+
+const testiData = [
+ 
+];
+
+// render 2x biar infinite smooth
+[...testiData, ...testiData].forEach(img => {
+  const card = document.createElement("div");
+  card.className = "testi-card";
+  card.innerHTML = `<img src="${img}" alt="Testimoni">`;
+  track.appendChild(card);
+});
+</script>
+<script>
+function toggleTentang() {
+  const text = document.getElementById("tentangContent");
+  const btn = document.querySelector(".btn-readmore");
+
+  text.classList.toggle("collapsed");
+
+  btn.innerText = text.classList.contains("collapsed")
+    ? "Selengkapnya"
+    : "Tutup";
+}
+
+</script>
+<script>
+  function scrollToWeekly(){
+  const el = document.getElementById("weeklyTable");
+  if(el){
+    el.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+}
+function openGallery() {
+  const popup = document.getElementById("galleryPopup");
+  const grid = document.getElementById("galleryGrid");
+
+  const data = JSON.parse(localStorage.getItem("testimoni") || "[]");
+
+  if (!data.length) {
+    grid.innerHTML = "<p>Belum ada foto testimoni.</p>";
+  } else {
+    grid.innerHTML = data.map(t => `
+      <img src="${t.foto}" alt="${t.nama}">
+    `).join("");
+  }
+
+  popup.style.display = "flex";
+}
+
+function closeGallery() {
+  document.getElementById("galleryPopup").style.display = "none";
+}
+</script>
+
+</body>
+</html>

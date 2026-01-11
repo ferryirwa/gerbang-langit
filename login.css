@@ -1,0 +1,104 @@
+/* ===== RESET ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins, sans-serif;}
+
+/* ===== BACKGROUND FOTO ===== */
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+ background:url('bg.jpg') center/cover no-repeat fixed;
+}
+
+/* ===== OVERLAY GELAP TRANSPARAN ===== */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45); /* Agar teks tetap terlihat */
+ backdrop-filter:blur(3px);}
+
+/* ===== LOGIN CARD PREMIUM ===== */
+.login-box{
+  position:relative;
+  width:390px;
+  background:rgba(255,255,255,.17);
+  border-radius:25px;
+  padding:40px;
+  text-align:center;
+  backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,.25);
+  animation:fadeIn .8s ease-out;
+  box-shadow:0 0 50px rgba(255,255,255,.25);
+}
+
+/* Judul */
+.login-box h2{
+  color:#fff;
+  margin-bottom:25px;
+  font-size:28px;
+  font-weight:700;
+  text-shadow:0 0 8px rgba(255,255,255,.6);
+}
+
+/* ===== INPUT ===== */
+.login-box input{
+  width:100%;
+  padding:14px;
+  margin:8px 0 18px;
+  border:none;
+  border-radius:10px;
+  background:rgba(255,255,255,.30);
+  color:white;
+  font-size:15px;
+  text-align:center;
+  transition:.25s;
+}
+.login-box input::placeholder{color:#e8faff;}
+.login-box input:focus{
+  background:rgba(255,255,255,.45);
+  transform:scale(1.04);
+}
+
+/* ===== TOMBOL LOGIN ===== */
+.login-box button{
+  width:100%;
+  padding:13px;
+  border:none;
+  font-size:17px;
+  border-radius:10px;
+  background:#00e1ff;
+  color:#002c3a;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 15px rgba(0,255,255,.6);
+  transition:.3s;
+}
+.login-box button:hover{
+  background:white;
+  color:#0086a4;
+  transform:scale(1.09);
+  box-shadow:0 0 25px rgba(255,255,255,.9);
+}
+
+/* ===== TOMBOL KEMBALI KE PUBLIK ===== */
+.back-btn{
+  margin-top:12px;
+  display:inline-block;
+  font-size:14px;
+  color:white;
+  opacity:.85;
+  cursor:pointer;
+  transition:.3s;
+}
+.back-btn:hover{
+  opacity:1;
+  text-shadow:0 0 6px #fff;
+  transform:scale(1.05);
+}
+
+/* ANIMASI MASUK */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(25px);}
+  to{opacity:1;transform:translateY(0);}
+}
